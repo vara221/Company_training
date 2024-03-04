@@ -1,0 +1,10 @@
+13:42:42 **** Incremental Build of configuration Debug for project UART_TRANSMIT_INTR ****
+make -j4 all 
+arm-none-eabi-size  UART_TRANSMIT_INTR.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10612	     52	   1644	  12308	   3014	UART_TRANSMIT_INTR.elf
+Finished building: default.size.stdout
+ 
+
+13:42:43 Build Finished. 0 errors, 0 warnings. (took 807ms)
+

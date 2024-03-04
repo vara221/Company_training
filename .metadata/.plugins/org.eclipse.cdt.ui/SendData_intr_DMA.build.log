@@ -1,0 +1,10 @@
+16:35:12 **** Incremental Build of configuration Debug for project SendData_intr_DMA ****
+make -j4 all 
+arm-none-eabi-size  SendData_intr_DMA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13112	     24	  11984	  25120	   6220	SendData_intr_DMA.elf
+Finished building: default.size.stdout
+ 
+
+16:35:13 Build Finished. 0 errors, 0 warnings. (took 843ms)
+

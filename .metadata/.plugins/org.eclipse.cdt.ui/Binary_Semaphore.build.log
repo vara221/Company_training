@@ -1,0 +1,30 @@
+11:33:44 **** Incremental Build of configuration Debug for project Binary_Semaphore ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartHighTask':
+../Core/Src/main.c:327:37: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  327 |          HAL_UART_Transmit(&huart2, str3, strlen(str3), 100);
+      |                                     ^~~~
+      |                                     |
+      |                                     char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Binary_Semaphore.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\vlab\STM32CubeIDE\workspace_1.14.1\Binary_Semaphore\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Binary_Semaphore.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Binary_Semaphore.elf
+ 
+arm-none-eabi-size  Binary_Semaphore.elf 
+arm-none-eabi-objdump -h -S Binary_Semaphore.elf  > "Binary_Semaphore.list"
+   text	   data	    bss	    dec	    hex	filename
+  20968	     24	  18024	  39016	   9868	Binary_Semaphore.elf
+Finished building: default.size.stdout
+ 
+Finished building: Binary_Semaphore.list
+ 
+
+11:33:46 Build Finished. 0 errors, 1 warnings. (took 2s.223ms)
+

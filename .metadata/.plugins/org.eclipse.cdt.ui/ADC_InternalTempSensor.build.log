@@ -1,0 +1,10 @@
+16:25:09 **** Incremental Build of configuration Debug for project ADC_InternalTempSensor ****
+make -j4 all 
+arm-none-eabi-size  ADC_InternalTempSensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14192	     20	   1820	  16032	   3ea0	ADC_InternalTempSensor.elf
+Finished building: default.size.stdout
+ 
+
+16:25:09 Build Finished. 0 errors, 0 warnings. (took 700ms)
+
